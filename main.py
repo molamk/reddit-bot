@@ -11,6 +11,6 @@ for submission in reddit.subreddit(subreddit_name).top(time_filter=time_filter, 
     print(f'Title:\t\t{submission.title}')
     print(f'Score:\t\t{submission.score}')
     print(f'Author:\t\t{submission.author}')
-    # print(f'URL:\t\t{submission.url}')
+    print(f'URL:\t\t{submission.url}')
     print(f'Thumbnail:\t{submission.thumbnail}')
     print(100 * '*')
