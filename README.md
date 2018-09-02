@@ -1,40 +1,40 @@
 # How to build a Reddit bot?
 
 ## Prerequisites
-1. Head over to [Reddit](https://www.reddit.com)
-1. Go to: Preferences -> Create App
 
-## Environment configuration
 ```bash
-# PRAW for reddit, dotenv for the env variables
-$ pip3 install praw python-dotenv
-# Create a file to store your environment variables
-$ touch .env
-# CLIENT_SECRET=<YOUR_APP_SECRET>
-# CLIENT_ID=<YOUR_APP_ID>
-# USER_AGENT=<platform>:<app name>:<version> (by /u/<username>)
+# Create a Reddit app and grab your credenials
+pip3 install python-dotenv praw
 ```
 
-## App setup
+## Environment setup
+
+```bash
+# Create an .env file, it should look like this
+CLIENT_SECRET=<YOUR_APP_SECRET>
+CLIENT_ID=<YOUR_APP_ID>
+USER_AGENT=<platform>:<app name>:<version> (by /u/<username>)
+```
+
+## Authenticate your app
+
 ```python
-from dotenv import load_dotenv
+import dotenv
 import os
 import praw
 
-# Load configuration
-load_dotenv()
-CLIENT_ID = os.getenv("CLIENT_ID")
-CLIENT_SECRET = os.getenv("CLIENT_SECRET")
-CLIENT_USER_AGENT = os.getenv("CLIENT_USER_AGENT")
+# Load the environment variables
+dotenv.load_dotenv()
 
 # Authenticate the app
 reddit = praw.Reddit(
-    client_id=CLIENT_ID,
-    client_secret=CLIENT_SECRET,
-    user_agent=CLIENT_USER_AGENT)
+    client_id=os.getenv("CLIENT_ID"),
+    client_secret=os.getenv("CLIENT_SECRET"),
+    user_agent=os.getenv("CLIENT_USER_AGENT"))
 ```
 
 ## Run
+
 ```python
 subreddit_name = 'deepfriedmemes'
 time_filter = 'week'
@@ -50,5 +50,6 @@ for submission in reddit.subreddit(subreddit_name).top(time_filter=time_filter, 
 ```
 
 ## Useful links
+
 - [PRAW](https://praw.readthedocs.io/en/latest/)
 - [The 12 factor app](https://12factor.net/)
