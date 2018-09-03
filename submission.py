@@ -1,5 +1,6 @@
-from reddit import reddit
 from datetime import datetime
+
+from reddit import reddit
 
 
 class Submission():
