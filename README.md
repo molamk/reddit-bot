@@ -33,9 +33,10 @@ reddit = praw.Reddit(
     user_agent=os.getenv("CLIENT_USER_AGENT"))
 ```
 
-## Handle a submission (basic printing)
+## Handle a submission
 
 ```python
+# We print each submission
 def submission_handler(submission):
     print(f'Title:\t\t{submission.title}')
     print(f'Score:\t\t{submission.score}')
