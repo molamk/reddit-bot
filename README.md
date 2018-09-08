@@ -1,5 +1,20 @@
 # How to build a Reddit bot?
 
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+
+## Table of Contents
+
+- [Prerequisites](#prerequisites)
+- [Environment setup](#environment-setup)
+- [Authenticate your app](#authenticate-your-app)
+- [Handle a submission](#handle-a-submission)
+- [Get submissions by time filter](#get-submissions-by-time-filter)
+- [Stream submissions in real-time](#stream-submissions-in-real-time)
+- [Useful links](#useful-links)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 ## Prerequisites
 
 ```bash
