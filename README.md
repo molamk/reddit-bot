@@ -19,6 +19,8 @@
 
 ```bash
 # Create a Reddit app and grab your credenials
+
+# Install dependencies
 pip3 install python-dotenv praw
 ```
 
